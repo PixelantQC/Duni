@@ -11,8 +11,8 @@
     "several": "nightwatch -t tests/selectSeveralItems.js --reporter ./scripts/html-reporter.js",
     "bs-all": "nightwatch -e default,firefox -c nightwatch-browserstack.json --reporter ./scripts/html-browserstack-reporter.js",
     "bs-select": "nightwatch -e firefox -t tests/selectItem.js -c nightwatch-browserstack.json --reporter ./scripts/html-browserstack-reporter.js",
-    "report": "test -d ~/Dropbox/AutomatedTests/Duni/Functional || mkdir -p ~/Dropbox/AutomatedTests/Duni/Functional && cp -R reports ~/Dropbox/AutomatedTests/Duni/Functional",
-    "bs-report": "test -d ~/Dropbox/AutomatedTests/Duni/Functional || mkdir -p ~/Dropbox/AutomatedTests/Duni/Functional && cp -R browserstack_reports ~/Dropbox/AutomatedTests/Duni/Functional"
+    "report": "test -d ~/Dropbox/AutomatedTests/Duni/$(date +%Y-%m-%d)/Functional || mkdir -p ~/Dropbox/AutomatedTests/Duni/$(date +%Y-%m-%d)/Functional && cp -R reports ~/Dropbox/AutomatedTests/Duni/$(date +%Y-%m-%d)/Functional",
+    "bs-report": "test -d ~/Dropbox/AutomatedTests/Duni/$(date +%Y-%m-%d)/Functional || mkdir -p ~/Dropbox/AutomatedTests/Duni/$(date +%Y-%m-%d)/Functional && cp -R browserstack_reports ~/Dropbox/AutomatedTests/Duni/$(date +%Y-%m-%d)/Functional"
   },
   "license": "ISC",
   "dependencies": {

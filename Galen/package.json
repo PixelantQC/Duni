@@ -8,8 +8,8 @@
     "bs-all": "galen test browserstack-configuration.test --htmlreport browserstack_reports",
     "bs-default": "galen test browserstack-configuration.test --htmlreport browserstack_reports --groups default",
     "bs-small": "galen test browserstack-configuration.test --htmlreport browserstack_reports --groups small",
-    "report": "test -d ~/Dropbox/AutomatedTests/Duni/Layout || mkdir -p ~/Dropbox/AutomatedTests/Duni/Layout && cp -R reports ~/Dropbox/AutomatedTests/Duni/Layout",
-    "bs-report": "test -d ~/Dropbox/AutomatedTests/Duni/Layout || mkdir -p ~/Dropbox/AutomatedTests/Duni/Layout && cp -R browserstack_reports ~/Dropbox/AutomatedTests/Duni/Layout"
+    "report": "test -d ~/Dropbox/AutomatedTests/Duni/$(date +%Y-%m-%d)/Layout || mkdir -p ~/Dropbox/AutomatedTests/Duni/$(date +%Y-%m-%d)/Layout && cp -R reports ~/Dropbox/AutomatedTests/Duni/$(date +%Y-%m-%d)/Layout",
+    "bs-report": "test -d ~/Dropbox/AutomatedTests/Duni/$(date +%Y-%m-%d)/Layout || mkdir -p ~/Dropbox/AutomatedTests/Duni/$(date +%Y-%m-%d)/Layout && cp -R browserstack_reports ~/Dropbox/AutomatedTests/Duni/$(date +%Y-%m-%d)/Layout"
   },
   "license": "ISC"
 }
