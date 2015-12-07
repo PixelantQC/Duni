@@ -1,11 +1,15 @@
 {
-  "name": "duni_layout",
+  "name": "duni-layout",
   "version": "1.0.0",
   "scripts": {
     "all": "galen test configuration.test --htmlreport reports",
     "default": "galen test configuration.test --htmlreport reports --groups default",
     "small": "galen test configuration.test --htmlreport reports --groups small",
-    "browserstack": "galen test browserstack-configuration.test --htmlreport browserstack_reports"
+    "bs-all": "galen test browserstack-configuration.test --htmlreport browserstack_reports",
+    "bs-default": "galen test browserstack-configuration.test --htmlreport browserstack_reports --groups default",
+    "bs-small": "galen test browserstack-configuration.test --htmlreport browserstack_reports --groups small",
+    "report": "test -d ~/Dropbox/AutomatedTests/Duni/Layout || mkdir -p ~/Dropbox/AutomatedTests/Duni/Layout && cp -R reports ~/Dropbox/AutomatedTests/Duni/Layout",
+    "bs-report": "test -d ~/Dropbox/AutomatedTests/Duni/Layout || mkdir -p ~/Dropbox/AutomatedTests/Duni/Layout && cp -R browserstack_reports ~/Dropbox/AutomatedTests/Duni/Layout"
   },
   "license": "ISC"
 }
