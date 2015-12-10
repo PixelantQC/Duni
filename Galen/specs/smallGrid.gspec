@@ -1,13 +1,12 @@
 @objects
-    #item
+    #items
     image-item-*               css      div.qbank_griditem__item
 
 
 = Item section =
-
-    @for [1 - 5, 7 - 12] as index
+    @for [1 - 5, 7 - 11] as index
         image-item-${index}:
-            width 265 px
+            width 165 px
             height 231 px
             aligned horizontally all image-item-${index + 1}
             aligned vertically all image-item-${index + 6}

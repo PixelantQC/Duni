@@ -1,25 +1,38 @@
 var duni = require('../helpers/login.js');
 
+// Objects
+
+// Grid Items
+var firstGridItem = '.images-container div:nth-child(2)'
+
+// Panel
+var itemPanel = 'div.qbank_panel__wrapper._cloned'
+var closePanel = 'div.qbank_panel__wrapper._cloned  div.qbank_panel__close'
+var selectionButton = 'div.qbank_panel__wrapper._cloned  a.qbank_selection__btn'
+
+// Selection
+var selectionCounter = '.counter'
+
 module.exports = {
   'Login to Duni': duni.login,
   'Open image panel': function (browser) {
     browser
-      .click('div[data-mediaid="83"]')
       .pause(1000)
-      .waitForElementVisible('div.qbank_panel__wrapper._cloned', 1000)
-      .assert.containsText("div.qbank_panel__wrapper._cloned p.qbank_panel__id span", "83", "Image panel with ID 83 is opened?")
+      .click(firstGridItem)
+      .pause(2000)
+      .assert.elementPresent(itemPanel, 'Item panel is opened?')
   },
   'Add item to selection': function (browser) {
     browser
-      .click('div.qbank_panel__wrapper._cloned div.qbank_panel a')
-      .pause(1000)
-      .assert.containsText('.counter', '1')
+      .click(selectionButton)
+      .pause(2000)
+      .assert.containsText(selectionCounter, '1', 'Selections counter = 1?')
   },
   'Close image panel': function (browser) {
     browser
-      .click('div.qbank_panel__wrapper._cloned div.qbank_panel div.qbank_panel__close span')
-      .pause(1000)
-      .assert.elementNotPresent('div.qbank_panel__wrapper._cloned', 'Image panel with ID 83 is closed?')
+      .click(closePanel)
+      .pause(2000)
+      .assert.elementNotPresent(itemPanel, 'Item panel is closed?')
       .end();
   }
 }

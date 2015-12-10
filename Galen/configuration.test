@@ -12,7 +12,8 @@
 Design page with default grid on ${deviceName}
     ${base_url} ${size}
         run scripts/login.js
-        check specs/design-page.gspec --include ${tags}
+        wait 10s until visible "css: div.qbank_griditem__item"
+        check specs/defaultGrid.gspec --include ${tags}
 
 @@ parameterized using devices
 @@ groups small
@@ -20,4 +21,5 @@ Design page with smaller grid on ${deviceName}
     ${base_url} ${size}
         run scripts/login.js
         run scripts/change-grid.js
-        check specs/design-page-changed-grid.gspec --include ${tags}
+        wait 10s until visible "css: div.qbank_griditem__item"
+        check specs/smallGrid.gspec --include ${tags}
